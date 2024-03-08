@@ -1,3 +1,7 @@
+using Microsoft.Extensions.Configuration;
+using OKR.DORA.Models;
+using OKR.DORA.Services;
+
 namespace OKR.DORA;
 
 public class Program
@@ -6,8 +10,14 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        builder.Services.AddScoped(typeof(AadService))
+                    .AddScoped(typeof(PbiEmbedService));
+
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+
+        builder.Services.Configure<AzureAd>(builder.Configuration.GetSection("AzureAd"))
+                    .Configure<PowerBI>(builder.Configuration.GetSection("PowerBI"));
 
         var app = builder.Build();
 

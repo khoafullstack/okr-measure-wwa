@@ -1,22 +1,39 @@
-html {
-  font-size: 14px;
+header {
+    background-color: #007FFF;
+    height: 75px;
+    width: 100%;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    header > p {
+        color: #FFFFFF;
+        font: bold 1.6em "segoe ui", arial, sans-serif;
+        margin-left: 31px;
+        padding-top: 20px;
+    }
+
+main {
+    margin: 0 auto;
+    width: 100%;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+#text-container > div > p {
+    font: 1.2em "segoe ui", arial, sans-serif;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
+#report-container {
+    height: calc(0.5625 * 61vw); /* 16:9 aspect ratio */
 }
 
-body {
-  margin-bottom: 60px;
+footer > p {
+    font: 1em "segoe ui", arial, sans-serif;
+}
+
+iframe {
+    border: none;
+}
+
+@media only screen and (max-width: 574px) {
+    #report-container {
+        height: calc(0.5625 * 100vw); /* 16:9 aspect ratio */
+    }
 }
